@@ -1,0 +1,8 @@
+ymaps[class$="map"]:first-child:not(:last-child) {
+    display: none;
+}
+
+* {
+    padding: 0;
+    height: 100%;
+}

@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/static/css/main.6ce7a71d.css",
+    "main.js": "/static/js/main.e3253922.js",
+    "static/media/vecteezy_man-with-map-pin-and-paper-document-in-hand-flat-design_.jpg": "/static/media/vecteezy_man-with-map-pin-and-paper-document-in-hand-flat-design_.8951431da11449169b43.jpg",
+    "static/media/background.jpeg": "/static/media/background.b65edfe00bda55e7ec52.jpeg",
+    "static/media/amc-green-bee.png": "/static/media/amc-green-bee.1d7f2fa5911e1b270081.png",
+    "static/media/amc-yellow-bee.png": "/static/media/amc-yellow-bee.55402ba36ac2e102fe54.png",
+    "static/media/amc-green.png": "/static/media/amc-green.c1bd8dffc26cdaa61041.png",
+    "static/media/amc-yellow.png": "/static/media/amc-yellow.b05918bccd71a8fdede7.png",
+    "static/media/amc-red-bee.png": "/static/media/amc-red-bee.43741794cfdd1e1e63bd.png",
+    "static/media/wi-fi.png": "/static/media/wi-fi.5468f684ecca5dc1ef49.png",
+    "static/media/amc-red.png": "/static/media/amc-red.b572b29dd396ff158430.png",
+    "static/media/kcell-bc.png": "/static/media/kcell-bc.8ee59b7b2750b44794af.png",
+    "static/media/kar-tel-bc-new.png": "/static/media/kar-tel-bc-new.cbd6e5f3e3999b703f00.png",
+    "static/media/kcell-new-locate.png": "/static/media/kcell-new-locate.8816d9f4c74e4071fd55.png",
+    "static/media/kcell-5G.png": "/static/media/kcell-5G.2aca789fb477a6cc64cc.png",
+    "index.html": "/index.html",
+    "main.6ce7a71d.css.map": "/static/css/main.6ce7a71d.css.map",
+    "main.e3253922.js.map": "/static/js/main.e3253922.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6ce7a71d.css",
+    "static/js/main.e3253922.js"
+  ]
+}

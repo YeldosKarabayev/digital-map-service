@@ -43,7 +43,7 @@ app.all('*', (req, res) => {
 
 mongoose.connection.once('open', () => {
   console.log('База данных подключен!')
-  app.listen(PORT, () => console.log(`Сервер запущен на порту ${PORT} 🚀`))
+  app.listen(PORT, '0.0.0.0', () => console.log(`Сервер запущен на порту ${PORT} 🚀`))
 })
 
 mongoose.connection.on('error', err => {

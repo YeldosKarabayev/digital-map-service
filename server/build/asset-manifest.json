@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.6ce7a71d.css",
-    "main.js": "/static/js/main.3ffce933.js",
+    "main.js": "/static/js/main.ac043904.js",
     "static/media/vecteezy_man-with-map-pin-and-paper-document-in-hand-flat-design_.jpg": "/static/media/vecteezy_man-with-map-pin-and-paper-document-in-hand-flat-design_.8951431da11449169b43.jpg",
     "static/media/background.jpeg": "/static/media/background.b65edfe00bda55e7ec52.jpeg",
     "static/media/amc-green-bee.png": "/static/media/amc-green-bee.1d7f2fa5911e1b270081.png",
@@ -17,10 +17,10 @@
     "static/media/kcell-5G.png": "/static/media/kcell-5G.2aca789fb477a6cc64cc.png",
     "index.html": "/index.html",
     "main.6ce7a71d.css.map": "/static/css/main.6ce7a71d.css.map",
-    "main.3ffce933.js.map": "/static/js/main.3ffce933.js.map"
+    "main.ac043904.js.map": "/static/js/main.ac043904.js.map"
   },
   "entrypoints": [
     "static/css/main.6ce7a71d.css",
-    "static/js/main.3ffce933.js"
+    "static/js/main.ac043904.js"
   ]
 }

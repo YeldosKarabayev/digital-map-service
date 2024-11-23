@@ -128,3 +128,9 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# Исключение node_modules
+node_modules/
+
+# Исключение кешей
+*.cache

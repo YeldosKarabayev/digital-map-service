@@ -10,7 +10,7 @@ const cors = require('cors')
 const corsOptions = require('./config/corsOptions')
 const connectDB = require('./config/dbConn')
 const mongoose = require('mongoose')
-const PORT = process.env.PORT || 5000
+const PORT = process.env.PORT || 443
 
 //app.use(logger)
 
@@ -39,7 +39,9 @@ app.all('*', (req, res) => {
   } else {
       res.type('txt').send('404 Not Found')
   }
-})
+});
+
+
 
 mongoose.connection.once('open', () => {
   console.log('База данных подключен!')

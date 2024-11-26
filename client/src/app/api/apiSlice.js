@@ -37,11 +37,11 @@ const baseQueryWithReauth = async (args, api, extraOptions) => {
             // retry original query with new access token
             result = await baseQuery(args, api, extraOptions)
         } else {
-
             if (refreshResult?.error?.status === 403) {
-                refreshResult.error.data.message = "Your login has expired. "
+                refreshResult.error.data.message = "Ваша сессия истекла. Пожалуйста, войдите заново.";
+                //api.dispatch(logOut());
             }
-            return refreshResult
+            return refreshResult;
         }
     }
 
@@ -49,8 +49,8 @@ const baseQueryWithReauth = async (args, api, extraOptions) => {
 }
 
 
-export const apiSlice = createApi({ 
-    baseQuery,
+export const apiSlice = createApi({
+    baseQuery: baseQueryWithReauth, // Use enhanced baseQuery
     tagTypes: ['User'],
-    endpoints: builder =>  ({})
-})
+    endpoints: (builder) => ({}), // Define endpoints dynamically
+});

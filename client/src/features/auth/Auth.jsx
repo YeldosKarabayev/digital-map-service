@@ -36,7 +36,9 @@ const Auth = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      const { accessToken } = await login({ username, password })
+      //const { accessToken } = await login({ username, password })
+      const response = await login({ username, password });
+      const { accessToken } = response.data; // Извлекаем токен из ответа
       dispatch(setCredentials({ accessToken }))
       setUsername('')
       setPassword('')
@@ -61,14 +63,18 @@ const Auth = () => {
 
   const errClass = errMsg ? "errmsg" : "offscreen"
 
-  if(isLoading) return 
-    //<p>Загрузка...</p>
-    <ClipLoader 
-      loading={isLoading}
-      size={150}
-      aria-label='Loading Spinner'
-      data-testid="loader"  
-    />
+  if (isLoading) {
+    return (
+        <div className="justify-center items-center absolute">
+            <ClipLoader
+                loading={isLoading}
+                size={150}
+                aria-label="Loading Spinner"
+                data-testid="loader"
+            />
+        </div>
+    );
+}
 
   
 

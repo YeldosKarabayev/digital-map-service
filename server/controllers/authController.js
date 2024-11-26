@@ -42,9 +42,9 @@ const login = asyncHandler(async (req, res) => {
 
     // Create secure cookie with refresh token 
     res.cookie('jwt', refreshToken, {
-        httpOnly: true, //accessible only by web server 
-        secure: true, //process.env.NODE_ENV === 'production', //https
-        sameSite: 'Strict', //cross-site cookie 
+        httpOnly: true,
+        sameSite: process.env.NODE_ENV === 'production' ? 'None' : 'Lax',
+        secure: process.env.NODE_ENV === 'production',
         maxAge: 7 * 24 * 60 * 60 * 1000 //cookie expiry: set to match rT
     })
 
@@ -66,12 +66,18 @@ const refresh = (req, res) => {
         refreshToken,
         process.env.REFRESH_TOKEN_SECRET,
         asyncHandler(async (err, decoded) => {
-            if (err) return res.status(403).json({ message: 'Forbidden' })
-
-            const foundUser = await User.findOne({ username: decoded.username }).exec()
-
-            if (!foundUser) return res.status(401).json({ message: 'Unauthorized' })
-
+            if (err) {
+                console.error('Ошибка Refresh Token:', err.message);
+                return res.status(403).json({ message: 'Forbidden' });
+            }
+    
+            const foundUser = await User.findOne({ username: decoded.username }).exec();
+    
+            if (!foundUser) {
+                console.error('Пользователь с Refresh Token не найден.');
+                return res.status(401).json({ message: 'Unauthorized' });
+            }
+    
             const accessToken = jwt.sign(
                 {
                     "UserInfo": {
@@ -81,11 +87,13 @@ const refresh = (req, res) => {
                 },
                 process.env.ACCESS_TOKEN_SECRET,
                 { expiresIn: '15m' }
-            )
-
-            res.json({ accessToken })
+            );
+    
+            console.log('Новый Access Token выдан:', accessToken);
+            res.json({ accessToken });
         })
-    )
+    );
+    
 }
 
 // @desc Logout
